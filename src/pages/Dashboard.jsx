@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { api } from '../lib/api'
 import Navbar from '../components/Navbar'
 
@@ -83,8 +84,8 @@ export default function Dashboard() {
             快速开始
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a
-              href="/members"
+            <Link
+              to="/members"
               className="flex items-center p-4 rounded-lg border-2 border-notion-border hover:bg-zinc-50 transition-all hover:shadow-line-art"
             >
               <span className="text-2xl mr-3">👤</span>
@@ -94,9 +95,9 @@ export default function Dashboard() {
                   录入新的社团成员信息
                 </p>
               </div>
-            </a>
-            <a
-              href="/activities"
+            </Link>
+            <Link
+              to="/activities"
               className="flex items-center p-4 rounded-lg border-2 border-notion-border hover:bg-zinc-50 transition-all hover:shadow-line-art"
             >
               <span className="text-2xl mr-3">📝</span>
@@ -106,7 +107,7 @@ export default function Dashboard() {
                   创建新的社团活动
                 </p>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
