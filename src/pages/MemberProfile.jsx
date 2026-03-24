@@ -67,7 +67,12 @@ export default function MemberProfile() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-notion-bg-secondary">
+      <div className="min-h-screen bg-notion-bg-secondary" style={{
+        backgroundImage: 'url(https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/33-imagetourl.cloud-1774343234928-ms013c.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center py-12">
@@ -80,7 +85,12 @@ export default function MemberProfile() {
 
   if (!member) {
     return (
-      <div className="min-h-screen bg-notion-bg-secondary">
+      <div className="min-h-screen bg-notion-bg-secondary" style={{
+        backgroundImage: 'url(https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/33-imagetourl.cloud-1774343234928-ms013c.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
         <Navbar />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center py-12">
@@ -101,7 +111,12 @@ export default function MemberProfile() {
   }
 
   return (
-    <div className="min-h-screen bg-notion-bg-secondary">
+    <div className="min-h-screen bg-notion-bg-secondary" style={{
+      backgroundImage: 'url(https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/33-imagetourl.cloud-1774343234928-ms013c.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">

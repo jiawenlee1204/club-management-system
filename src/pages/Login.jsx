@@ -64,7 +64,12 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-notion-bg-secondary p-4 line-art-pattern">
+    <div className="min-h-screen flex items-center justify-center bg-notion-bg-secondary p-4 line-art-pattern" style={{
+      backgroundImage: 'url(https://pub-141831e61e69445289222976a15b6fb3.r2.dev/Image_to_url_V2/33-imagetourl.cloud-1774343234928-ms013c.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
       <div className="notion-card w-full max-w-md p-8 line-art-border">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-notion-border shadow-line-art mb-4 relative">
