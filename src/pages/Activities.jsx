@@ -96,6 +96,19 @@ export default function Activities() {
     }
   }
 
+  const handleDelete = async (id) => {
+    if (!window.confirm('确定要删除这个活动吗？此操作不可恢复')) return
+
+    try {
+      await api.deleteActivity(id)
+      fetchActivities()
+      success('活动删除成功')
+    } catch (err) {
+      console.error('Error deleting activity:', err.message)
+      error('删除活动失败: ' + err.message)
+    }
+  }
+
   const isActivityEnded = (date) => {
     return new Date(date) < new Date()
   }
@@ -240,11 +253,21 @@ export default function Activities() {
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-xl font-semibold text-notion-text">{activity.title}</h3>
-                    {isActivityEnded(activity.date) && (
-                      <span className="px-2 py-1 bg-zinc-100 text-notion-text-secondary text-xs rounded-full">
-                        已结束
-                      </span>
-                    )}
+                    <div className="flex items-center space-x-2">
+                      {isActivityEnded(activity.date) && (
+                        <span className="px-2 py-1 bg-zinc-100 text-notion-text-secondary text-xs rounded-full">
+                          已结束
+                        </span>
+                      )}
+                      <button
+                        onClick={() => handleDelete(activity.id)}
+                        className="text-notion-text-secondary hover:text-red-600 transition-colors"
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                   
                   <div className="space-y-2 text-sm text-notion-text-secondary mb-4">

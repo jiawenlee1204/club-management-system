@@ -94,6 +94,20 @@ export const api = {
     }
   },
 
+  async deleteActivity(id) {
+    try {
+      const { error } = await supabase
+        .from('activities')
+        .delete()
+        .eq('id', id)
+      if (error) throw error
+      return { success: true }
+    } catch (error) {
+      console.error('Delete activity error:', error)
+      throw error
+    }
+  },
+
   async fetchRegistrations(userId) {
     try {
       if (!userId) return []
