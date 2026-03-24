@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@theme {
+  --color-notion-bg: #FFFFFF;
+  --color-notion-bg-secondary: #FAFAFA;
+  --color-notion-text: #000000;
+  --color-notion-text-secondary: #666666;
+  --color-notion-border: #000000;
+  
+  --font-family-sans: 'Inter', 'PingFang SC', system-ui, sans-serif;
+  
+  --shadow-notion: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-notion-hover: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body {
+  background-color: var(--color-notion-bg-secondary);
+  color: var(--color-notion-text);
+  font-family: var(--font-family-sans);
+}
+
+.notion-card {
+  background-color: var(--color-notion-bg);
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-notion-border);
+  box-shadow: 4px 4px 0px var(--color-notion-border);
+  transition: all 0.2s ease;
+}
+
+.notion-card:hover {
+  box-shadow: 6px 6px 0px var(--color-notion-border);
+  transform: translate(-2px, -2px);
+}
+
+.notion-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-notion-border);
+  background-color: var(--color-notion-bg);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: var(--color-notion-text);
+  box-shadow: 3px 3px 0px var(--color-notion-border);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.notion-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--color-notion-border);
+}
+
+.notion-button:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0px var(--color-notion-border);
+}
+
+.notion-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-notion-border);
+  background-color: var(--color-notion-bg);
+  padding: 0.75rem 1rem;
+  color: var(--color-notion-text);
+  font-weight: 500;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.notion-input::placeholder {
+  color: var(--color-notion-text-secondary);
+  font-weight: 400;
+}
+
+.notion-input:focus {
+  outline: none;
+  border-color: var(--color-notion-border);
+  box-shadow: 4px 4px 0px var(--color-notion-border);
+  transform: translate(-2px, -2px);
+}
+
+.notion-textarea {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-notion-border);
+  background-color: var(--color-notion-bg);
+  padding: 0.75rem 1rem;
+  color: var(--color-notion-text);
+  resize: none;
+  font-weight: 500;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.notion-textarea::placeholder {
+  color: var(--color-notion-text-secondary);
+  font-weight: 400;
+}
+
+.notion-textarea:focus {
+  outline: none;
+  border-color: var(--color-notion-border);
+  box-shadow: 4px 4px 0px var(--color-notion-border);
+  transform: translate(-2px, -2px);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+.line-art-pattern {
+  background-image: 
+    linear-gradient(90deg, transparent 49%, #000 49%, #000 51%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, #000 49%, #000 51%, transparent 51%);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.line-art-border {
+  position: relative;
+}
+
+.line-art-border::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px dashed var(--color-notion-border);
+  border-radius: 0.75rem;
+  pointer-events: none;
+}
+
+.doodle-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-notion-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: white;
+}
+
+.doodle-icon::after {
+  content: '';
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border: 1px dashed var(--color-notion-border);
+  border-radius: 50%;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
